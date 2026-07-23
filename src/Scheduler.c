@@ -10,8 +10,10 @@
 void NonPrimitiveScheduler(struct Processes* p, int size, enum Criteria c){
     int time = 0;
     int index = nextProcess(p, size, time, c);
+    printf("Current Index %d", index);
     while (size>=0)
     {
+        printf("Entered Scheduler");
         if (index<=0){
             printf("CPU: Idle");
             time = TimeWait(time);

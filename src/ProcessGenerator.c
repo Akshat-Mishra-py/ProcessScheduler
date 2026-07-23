@@ -5,7 +5,7 @@
 struct Processes* ProcessGenerator(int size){
     // Allocates memory for the requested number of processes.
     struct Processes* p = (struct Processes*)malloc(size * sizeof(struct Processes));
-    float time;
+    float time = 0 ;
 
     // A pool of available process types from which random values are selected.
     enum ProcessesType processPool[] = {IO, COMPUTE, LIGHTCOMPUTE};

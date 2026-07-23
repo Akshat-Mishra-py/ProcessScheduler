@@ -1,10 +1,8 @@
-
 #ifndef utilites
 #define utilities
 #include "ProcessManager.h"
 
 // This file provides helper utilities for choosing the next process.
-
 // Defines the available selection criteria for choosing the next process.
 enum Criteria{
     CRITERIA_BURST_TIME,

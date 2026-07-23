@@ -1,6 +1,7 @@
 #ifndef scheduler
 #define scheduler
-
+#include "ProcessManager.h"
+#include "utilities.h"
 // Header for the scheduler functions.
 // These functions are responsible for ordering and scheduling the processes.
 
