@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <Windows.h>
-
 // This file contains scheduler implementations.
 // The current function is left empty and can be completed later.
 
@@ -15,7 +14,7 @@ void NonPrimitiveScheduler(struct Processes* p, int size, enum Criteria c){
     {
         if (index<=0){
             printf("CPU: Idle");
-            time=Wait(time);
+            time = TimeWait(time);
             index = nextProcess(p, size, time, c);
         }
         if ( p[index].actualBurstTime<=0 ){
@@ -25,11 +24,12 @@ void NonPrimitiveScheduler(struct Processes* p, int size, enum Criteria c){
         else{
             printf("CPU: Computing Process: #", p[index].pid);
             p[index].actualBurstTime--;
-            time = Wait(time);
+            time = TimeWait(time);
         }
     }    
 }
-int Wait(int currentTime){
+int TimeWait(int currentTime){
     currentTime++;
-    Sleep(1000);
+    Sleep(1);
+    return currentTime;
 }

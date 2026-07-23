@@ -1,7 +1,7 @@
-#include "ProcessManager.h"
 
 #ifndef utilites
 #define utilities
+#include "ProcessManager.h"
 
 // This file provides helper utilities for choosing the next process.
 
