@@ -13,6 +13,7 @@ enum Criteria{
 };
 
 // Function prototype for selecting the next process based on a chosen criterion.
-struct Processes nextProcess(struct Processes* p, enum Criteria c);
+int nextProcess(struct Processes* p, int size, int CurrentTime, enum Criteria c);
+int removeProcess(struct Processes* processArray, int index, int size);
 
 #endif
