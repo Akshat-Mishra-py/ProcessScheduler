@@ -1,4 +1,4 @@
-#ifndef utilites
+#ifndef utilities
 #define utilities
 #include "ProcessManager.h"
 

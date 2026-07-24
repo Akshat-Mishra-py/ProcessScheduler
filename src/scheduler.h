@@ -8,4 +8,5 @@
 void NonPrimitiveScheduler(struct Processes* p, int size, enum Criteria c);
 void PrimitiveScheduler(struct Processes* p, int size, enum Criteria c);
 int TimeWait(int currentTime);
+void ProcessInfo(struct Processes process);
 #endif
