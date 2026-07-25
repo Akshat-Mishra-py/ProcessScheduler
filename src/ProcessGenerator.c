@@ -2,9 +2,11 @@
 #include "scheduler.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 // This function creates an array of processes and fills each one with values.
 struct Processes* ProcessGenerator(int size){
+    srand(5);
     // Allocates memory for the requested number of processes.
     struct Processes* p = (struct Processes*)malloc(size * sizeof(struct Processes));
     float time = 0 ;
@@ -18,6 +20,7 @@ struct Processes* ProcessGenerator(int size){
     for (size_t i = 0; i < size; i++)
     {
         p[i].pid = i; // Each process gets a simple sequential ID.
+        randomindx = rand()&totalElements;
         delta = (rand()%2)+1;
         p[i].arrivalTime = time + delta ; // Arrival time is randomized.
         time = time + delta; // Keeps track of cumulative time.
