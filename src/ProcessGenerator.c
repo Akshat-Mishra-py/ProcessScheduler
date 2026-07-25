@@ -6,7 +6,7 @@
 
 // This function creates an array of processes and fills each one with values.
 struct Processes* ProcessGenerator(int size){
-    srand(5);
+    srand(time(NULL));
     // Allocates memory for the requested number of processes.
     struct Processes* p = (struct Processes*)malloc(size * sizeof(struct Processes));
     float time = 0 ;
@@ -28,13 +28,17 @@ struct Processes* ProcessGenerator(int size){
         p[i].actualBurstTime = p[i].processType+(rand()%3); // Burst time is derived from type plus a small random value.
         p[i].priorityNumber = i; // Priority is initially set to the index value.
     }
-    printf("----------Generated Processes--------------");
+    int totalBurstTime = 0;
+    printf(BLUE "\t Generated Processes\n\n");
     for (size_t i = 0; i < size; i++)
     {
         ProcessInfo(p[i]);
+        totalBurstTime = totalBurstTime + p[i].actualBurstTime;
         printf("\n");
     }
-    printf("\n---------------Start------------------\n");
+
+    printf("\n\tTotal Burst Time : %d\n" RESET, totalBurstTime);
+    printf("\n\t\tStart\n" RESET);
      
     return p;
 } 

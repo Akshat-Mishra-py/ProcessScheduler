@@ -53,13 +53,13 @@ int removeProcess(struct Processes *processArray, int index, int size)
 {
     if (index < 0 || index >= size)
     {
-        printf("------ Invalid process delete request: index %d --------\n", index);
+        printf(RED "------ Invalid process delete request: index %d --------\n"RESET, index);
         return size;
     }
 
-    printf("-------- Process deleted --------\n");
+    printf(RED "-------- Process Completed --------\n");
     ProcessInfo(processArray[index]);
-    printf("======== Process deleted ========\n");
+    printf("======== Process Completed ========\n" RESET);
 
     processArray[index] = processArray[size - 1]; // set to last process to replace the current one
     return size - 1;
