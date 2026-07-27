@@ -7,7 +7,7 @@
 // This file contains scheduler implementations.
 // The current function is left empty and can be completed later.
 
-void NonPrimitiveScheduler(struct Processes* p, int size, enum Criteria c){
+void NonPreemptiveScheduler(struct Processes* p, int size, enum Criteria c){
     int time = 0;
     int index = nextProcess(p, size, time, c);
     while (size > 0)
