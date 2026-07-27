@@ -20,7 +20,7 @@ struct Processes* ProcessGenerator(int size){
     for (size_t i = 0; i < size; i++)
     {
         p[i].pid = i; // Each process gets a simple sequential ID.
-        randomindx = rand()&totalElements;
+        randomindx = rand()%totalElements;
         delta = (rand()%2)+1;
         p[i].arrivalTime = time + delta ; // Arrival time is randomized.
         time = time + delta; // Keeps track of cumulative time.
